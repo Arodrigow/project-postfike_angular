@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pstfk-btn {
+  height: 35px;
+  width: 88px;
+
+  color: white;
+  background-color: #e8666d;
+}
+
+.pstfk-btn:hover {
+  color: black;
+  background-color: #ffd6d6;
+}
+
+input:focus {
+  outline-width: 0;
+}
