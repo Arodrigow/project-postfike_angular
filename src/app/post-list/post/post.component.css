@@ -1,0 +1,24 @@
+.post {
+  margin: 50px;
+  padding: 10px;
+  max-width: 300px;
+  height: 200px;
+  background-color: rgb(148, 178, 233);
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.postFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
