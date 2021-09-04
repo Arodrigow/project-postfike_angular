@@ -4,4 +4,5 @@ export interface PostDto {
   bookmark_count: number;
   tags?: string[];
   created_at?: Date;
+  deadline?: string;
 }
