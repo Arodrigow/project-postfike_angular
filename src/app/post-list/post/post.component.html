@@ -1,17 +1,18 @@
-<div class="post">
+<div class="post" [style.background-color]="bgColor" [style.transform]="deg">
   <a href>
     <div class="postContainer">
       <div class="postHeader">
-        <h2 style="font-weight: bold;">{{postElement.title}}</h2>
-        <p class="dias">há {{postElement.deadline}} dias</p>
+        <h2 style="font-weight: bold">{{ postElement.title }}</h2>
+        <p class="dias">há {{ postElement.deadline }} dias</p>
       </div>
       <div class="postContent">
-        <p>{{postElement.description}}</p></div>
+        <p>{{ postElement.description }}</p>
+      </div>
       <div class="postFooter">
         <div class="postTags">
-          <p class="tag" *ngFor="let tag of postElement.tags">#{{tag}}</p>
+          <p class="tag" *ngFor="let tag of postElement.tags">#{{ tag }}</p>
         </div>
-        <p>{{postElement.bookmark_count}}</p>
+        <p>{{ postElement.bookmark_count }}</p>
       </div>
     </div>
   </a>
