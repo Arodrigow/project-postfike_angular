@@ -10,9 +10,10 @@ export class PostListComponent implements OnInit {
   posts: PostDto[] = [
     {
       title: 'Mock',
-      description: 'This is a mock description',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
       bookmark_count: 300000,
-      tags: ['post', 'mock', 'tag'],
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
       deadline: '3',
     },
     {
@@ -21,6 +22,38 @@ export class PostListComponent implements OnInit {
       bookmark_count: 1,
       tags: [],
       deadline: '30',
+    },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
+    },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
+    },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
+    },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
     },
   ];
 

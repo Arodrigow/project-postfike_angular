@@ -1,12 +1,19 @@
 .post {
+  border-style: solid;
+  border-color: black;
   margin: 50px;
   padding: 10px;
   max-width: 300px;
   height: 200px;
-  background-color: rgb(148, 178, 233);
+  background-color: rgb(240, 206, 248);
+  transform: rotate(-1deg);
 }
 
 .postContainer {
+  border-style: solid;
+  border-color: red;
+  height: 200px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,6 +26,18 @@
 }
 .postFooter {
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.postTags {
+  display: flex;
+}
+.tag {
+  color: rgb(84, 149, 223);
+  padding: 2px;
+  font-size: smaller;
 }

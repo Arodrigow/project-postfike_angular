@@ -2,13 +2,15 @@
   <a href>
     <div class="postContainer">
       <div class="postHeader">
-        <h3>{{postElement.title}}</h3>
-        <p class="dias">{{postElement.deadline}}</p>
+        <h2 style="font-weight: bold;">{{postElement.title}}</h2>
+        <p class="dias">há {{postElement.deadline}} dias</p>
       </div>
       <div class="postContent">
         <p>{{postElement.description}}</p></div>
       <div class="postFooter">
-        <p *ngFor="let tag of postElement.tags">{{tag}}</p>
+        <div class="postTags">
+          <p class="tag" *ngFor="let tag of postElement.tags">#{{tag}}</p>
+        </div>
         <p>{{postElement.bookmark_count}}</p>
       </div>
     </div>
