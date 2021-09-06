@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { fromEvent } from 'rxjs';
 import { PostDto } from 'src/models/post.dto';
 
 @Component({
@@ -7,6 +8,7 @@ import { PostDto } from 'src/models/post.dto';
   styleUrls: ['./post-list.component.css'],
 })
 export class PostListComponent implements OnInit {
+  breakpoint = 3;
   posts: PostDto[] = [
     {
       title: 'Mock',
@@ -55,9 +57,47 @@ export class PostListComponent implements OnInit {
       tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
       deadline: '3',
     },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
+    },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
+    },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
+    },
+    {
+      title: 'Mock',
+      description:
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu',
+      bookmark_count: 300000,
+      tags: ['post', 'mock', 'tag', 'outra', 'pra', 'testar'],
+      deadline: '3',
+    },
   ];
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.breakpoint = (window.visualViewport.width <= 400) ? 1 : 3;
+  }
+
+  onResize(event: any) {
+    this.breakpoint = (event.target.visualViewport.width <= 400) ? 1 : 3;
+  }
 }

@@ -1,11 +1,11 @@
-
-<mat-grid-list  cols="4" gutterSize='15px' rowHeight='200px' style="
-border-style: solid;
-border-color: red;">
-  <mat-grid-tile *ngFor="let post of posts" style="margin: 10px;
-
-  border-style: solid;
-  border-color: red;">
-    <app-post [postElement]='post'> </app-post>
+<mat-grid-list
+  [cols]="breakpoint"
+  gutterSize="15px"
+  rowHeight="200px"
+  (window:resize)="onResize($event)"
+  class="grid"
+>
+  <mat-grid-tile *ngFor="let post of posts">
+    <app-post [postElement]="post"> </app-post>
   </mat-grid-tile>
 </mat-grid-list>
