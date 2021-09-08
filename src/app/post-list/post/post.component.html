@@ -2,7 +2,10 @@
   <div class="postContainer">
     <div class="postHeader">
       <a href="">
-        <h2 style="font-weight: bold">{{ postElement.title }}</h2>
+        <h2 style="font-weight: bold" class="postTitle">
+          {{ postElement.title }}
+        </h2>
+        <p class="postOwnerName">{{ postElement.user.name }}</p>
       </a>
       <p class="dias">há {{ getDeadline() }} dias</p>
     </div>

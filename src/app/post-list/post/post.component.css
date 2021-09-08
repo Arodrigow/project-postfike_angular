@@ -23,7 +23,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 }
+
+.postTitle {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.postOwnerName {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+  font-size: 10px;
+}
+
 .postFooter {
   display: flex;
   box-sizing: border-box;
