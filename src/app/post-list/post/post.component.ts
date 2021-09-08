@@ -16,7 +16,7 @@ export class PostComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    const rand = Math.floor(Math.random() * 5)
+    const rand = Math.floor(Math.random() * this.bgColors.length)
     this.deg = `rotate(${(Math.random() * 3) - 1.5}deg)`
 
     this.bgColor = this.bgColors[rand];
