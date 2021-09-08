@@ -41,3 +41,29 @@
   padding: 2px;
   font-size: smaller;
 }
+
+.postBookmark {
+  display: flex;
+}
+
+.bm-Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+
+  border-style: none;
+  margin-right: 10px;
+
+  width: 15px;
+  height: 20px;
+}
+.bm-Btn:hover {
+  cursor: pointer;
+}
+
+.bm-Img {
+  width: inherit;
+  height: inherit;
+}
