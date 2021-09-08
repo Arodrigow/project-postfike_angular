@@ -17,8 +17,12 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
     const rand = Math.floor(Math.random() * this.bgColors.length)
-    this.deg = `rotate(${(Math.random() * 3) - 1.5}deg)`
+    this.deg = `rotate(${(Math.random() * 3) - 1.5}deg)`;
 
     this.bgColor = this.bgColors[rand];
+  }
+
+  getDeadline() {
+    return new Date((Date.now() - new Date(this.postElement.created_at).valueOf())).getDay();
   }
 }

@@ -1,19 +1,28 @@
 <div class="post" [style.background-color]="bgColor" [style.transform]="deg">
-  <a href>
-    <div class="postContainer">
-      <div class="postHeader">
+  <div class="postContainer">
+    <div class="postHeader">
+      <a href="">
         <h2 style="font-weight: bold">{{ postElement.title }}</h2>
-        <p class="dias">há {{ postElement.deadline }} dias</p>
-      </div>
-      <div class="postContent">
+      </a>
+      <p class="dias">há {{ getDeadline() }} dias</p>
+    </div>
+    <div class="postContent">
+      <a href="">
         <p>{{ postElement.description }}</p>
+      </a>
+    </div>
+    <div class="postFooter">
+      <div class="postTags">
+        <p class="tag" *ngFor="let tag of postElement.tags">
+          <a href="">#{{ tag.title }}</a>
+        </p>
       </div>
-      <div class="postFooter">
-        <div class="postTags">
-          <p class="tag" *ngFor="let tag of postElement.tags">#{{ tag }}</p>
-        </div>
-        <p>{{ postElement.bookmark_count }}</p>
+      <div class="postBookmark">
+        <button class="bm-Btn">
+          <img src="../../../assets/svg/bookmark.svg" alt="" class="bm-Img" />
+        </button>
+        <p>{{ postElement.count_bookmark }}</p>
       </div>
     </div>
-  </a>
+  </div>
 </div>
