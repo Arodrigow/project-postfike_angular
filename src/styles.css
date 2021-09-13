@@ -146,6 +146,21 @@ a {
   background-color: #ffd6d6;
 }
 
+input {
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0px 0px 3px 1px gray;
+
+  margin-right: 16px;
+
+  width: 359px;
+  height: 35px;
+
+  border: 0px;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
 input:focus {
   outline-width: 0;
 }
