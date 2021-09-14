@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.pstfk-LoginCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 50px;
+  padding: 15px;
+  width: 400px;
+  height: 250px;
+
+  background-color: #ffe0f8;
+  box-shadow: 0px 0px 3px 1px rgb(207, 207, 207);
+}
+
+.header {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.pstfk-FormInput {
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.enter-btn {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer > a {
+  font-size: 0.8rem;
+  color: rgb(0, 119, 255);
+}
