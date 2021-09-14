@@ -10,6 +10,8 @@ import { PostDto } from 'src/models/post.dto';
 export class PostListComponent implements OnInit {
   breakpoint = 3;
   posts: PostDto[] = []
+  postCount: number = 18;
+  pageNumber: number = 1;
 
   constructor(private postService: PostService) {}
 
@@ -23,11 +25,13 @@ export class PostListComponent implements OnInit {
   }
 
   getAllPosts() {
-    this.postService.getAllPosts(1).subscribe(
+    this.postService.getAllPosts(this.pageNumber).subscribe(
       response => {
-        console.log(response)
-        this.posts = response;
+        this.posts = response.page
+        this.postCount = response.count;
       },
       error => {});;
   }
+
+
 }

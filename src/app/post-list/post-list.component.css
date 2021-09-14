@@ -1,3 +1,29 @@
 .grid {
   margin-top: 20px;
 }
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.paginator a {
+  color: black;
+  float: left;
+  margin: 25px 0px;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.paginator a.active {
+  color: white;
+  background-color: #e8666d;
+  border-radius: 5px;
+}
+
+.paginator a:hover:not(.active) {
+  color: black;
+  background-color: #ffd6d6;
+}
