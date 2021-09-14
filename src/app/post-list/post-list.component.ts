@@ -1,5 +1,5 @@
+import { PostService } from './../../services/post.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
 import { PostDto } from 'src/models/post.dto';
 
 @Component({
@@ -11,7 +11,7 @@ export class PostListComponent implements OnInit {
   breakpoint = 3;
   posts: PostDto[] = []
 
-  constructor(private http: HttpClient,) {}
+  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
     this.getAllPosts()
@@ -23,10 +23,11 @@ export class PostListComponent implements OnInit {
   }
 
   getAllPosts() {
-    this.http.get<PostDto[]>('http://localhost:3000/posts').subscribe(
+    this.postService.getAllPosts(1).subscribe(
       response => {
+        console.log(response)
         this.posts = response;
       },
-      error => {});
+      error => {});;
   }
 }

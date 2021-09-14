@@ -1,6 +1,8 @@
+import { PostService } from './../services/post.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -25,12 +27,15 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NoopAnimationsModule,
     HttpClientModule,
     MatButtonModule,
     MatGridListModule,
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
