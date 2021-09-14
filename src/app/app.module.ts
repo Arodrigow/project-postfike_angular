@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { PostService } from './../services/post.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,7 +35,8 @@ import { FooterComponent } from './footer/footer.component';
     MatGridListModule,
   ],
   providers: [
-    PostService
+    PostService,
+    AuthService
   ],
   bootstrap: [AppComponent],
 })
