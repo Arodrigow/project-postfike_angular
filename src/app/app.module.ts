@@ -1,3 +1,4 @@
+import { AuthInteceptorProvider } from './../interceptors/auth.interceptor';
 import { AuthService } from './../services/auth.service';
 import { PostService } from './../services/post.service';
 import { NgModule } from '@angular/core';
@@ -36,7 +37,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   providers: [
     PostService,
-    AuthService
+    AuthService,
+    AuthInteceptorProvider
   ],
   bootstrap: [AppComponent],
 })
