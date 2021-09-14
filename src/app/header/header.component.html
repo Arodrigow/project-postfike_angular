@@ -8,8 +8,22 @@
   </form>
 
   <div>
-    <button mat-raised-button class="pstfk-btn" routerLink="/login">
+    <button
+      mat-raised-button
+      class="pstfk-btn"
+      routerLink="/login"
+      *ngIf="isLoggedOut()"
+    >
       Entrar
+    </button>
+
+    <button
+      mat-raised-button
+      class="pstfk-btn"
+      *ngIf="isLoggedIn()"
+      (click)="logout()"
+    >
+      Sair
     </button>
   </div>
 </nav>
