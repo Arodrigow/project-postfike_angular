@@ -1,3 +1,4 @@
+import { CredentialsDto } from './../models/credentials.dto';
 import { API_CONFIG } from './../config/api.config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";
@@ -11,7 +12,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string) {
-    return this.http.post(`${API_CONFIG.baseUrl}/auth/login`, { email, password }, this.httpOptions)
+  login(credentials: CredentialsDto) {
+    return this.http.post(`${API_CONFIG.baseUrl}/auth/login`, credentials, this.httpOptions)
   }
 }
