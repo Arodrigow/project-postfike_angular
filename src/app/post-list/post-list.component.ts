@@ -1,8 +1,8 @@
-import { API_CONFIG } from './../../config/api.config';
 import { PostService } from './../../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { PostDto } from 'src/models/post.dto';
 import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -15,11 +15,14 @@ export class PostListComponent implements OnInit {
   postCount: number = 0;
   pageNumber: number = 1;
 
-  constructor(private postService: PostService, private localtion: Location) {}
+  constructor(private postService: PostService,
+    private location: Location,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe(params => this.pageNumber = params.page);
     this.getAllPosts()
-    this.pageNumber = 1;
 
     this.breakpoint = (window.visualViewport.width <= 400) ? 1 : 3;
   }
@@ -31,6 +34,9 @@ export class PostListComponent implements OnInit {
   getAllPosts() {
     this.postService.getAllPosts(this.pageNumber).subscribe(
       response => {
+        if (response.page.length == 0) {
+          this.router.navigateByUrl('/Page-Not-Found')
+        }
         this.posts = response.page
         this.postCount = response.count;
       },
@@ -40,7 +46,7 @@ export class PostListComponent implements OnInit {
   handlePageChange(event: any) {
     this.pageNumber = event;
     this.getAllPosts();
-    this.localtion.go(`/posts?page=${this.pageNumber}`)
+    this.location.go(`/posts?page=${this.pageNumber}`)
   }
 
 
