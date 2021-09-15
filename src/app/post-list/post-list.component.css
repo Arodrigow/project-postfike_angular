@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.paginator a {
+.paginator ::ng-deep .ngx-pagination {
   color: black;
   float: left;
   margin: 25px 0px;
@@ -17,13 +17,14 @@
   border-radius: 5px;
 }
 
-.paginator a.active {
+.paginator ::ng-deep .ngx-pagination .current {
   color: white;
   background-color: #e8666d;
   border-radius: 5px;
 }
 
-.paginator a:hover:not(.active) {
+.paginator ::ng-deep .ngx-pagination a:hover:not(.active) {
   color: black;
   background-color: #ffd6d6;
+  border-radius: 5px;
 }
