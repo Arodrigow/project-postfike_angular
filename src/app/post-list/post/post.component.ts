@@ -1,6 +1,8 @@
+import { FullPostComponent } from './full-post/full-post.component';
 import { PostColors } from './../../../models/postColors';
 import { Component, Input, OnInit } from '@angular/core';
 import { PostDto } from 'src/models/post.dto';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-post',
@@ -13,7 +15,7 @@ export class PostComponent implements OnInit {
   bgColor = this.bgColors[0];
   deg = 'rotate(-1.3deg)';
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
     const rand = Math.floor(Math.random() * this.bgColors.length)
@@ -24,5 +26,15 @@ export class PostComponent implements OnInit {
 
   getDeadline() {
     return new Date((Date.now() - new Date(this.postElement.created_at).valueOf())).getDay();
+  }
+
+  openModal() {
+    const dialogRef = this.dialog.open(FullPostComponent, {
+      data: { post: this.postElement }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
