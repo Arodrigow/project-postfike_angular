@@ -14,9 +14,16 @@
         [isFull]="true"
       ></app-post
     ></mat-grid-tile>
-    <mat-grid-tile colspan="12" rowspan="1">
-      {{ fullPostData.details }}</mat-grid-tile
+    <mat-grid-tile
+      colspan="12"
+      rowspan="1"
+      [style.background-color]="bgColor"
+      class="pstfk-fullPostDetails"
     >
+      <p>
+        {{ fullPostData.details }}
+      </p>
+    </mat-grid-tile>
   </mat-grid-list>
   <div class="pstfk-fullPostFooter">
     <div class="buttons">
