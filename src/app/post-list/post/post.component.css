@@ -8,8 +8,6 @@
 }
 
 .postContainer {
-  border-style: solid;
-  border-color: red;
   height: 200px;
   width: 350px;
   display: flex;
