@@ -1,0 +1,33 @@
+<div class="pstfk-fullPost">
+  <div class="pstfk-fullPostHeader">
+    <button class="pstfk-btn-clear" style="color: orange">
+      &#9888; Denunciar anúncio
+    </button>
+    <button class="pstfk-btn-clear">Fechar X</button>
+  </div>
+  <mat-grid-list cols="12" rowHeight="240">
+    <mat-grid-tile colspan="5" rowspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="7" rowspan="1"
+      ><app-post [postElement]="fullPostData"></app-post
+    ></mat-grid-tile>
+    <mat-grid-tile colspan="12" rowspan="1">
+      {{ fullPostData.details }}</mat-grid-tile
+    >
+  </mat-grid-list>
+  <div class="pstfk-fullPostFooter">
+    <div class="buttons">
+      <button class="bm-Btn pstfk-btn-clear">
+        <img src="../../../../assets/svg/bookmark.svg" alt="" class="bm-Img" />
+        Marcar
+      </button>
+      <button class="bm-Btn pstfk-btn-clear">
+        <img
+          src="../../../../assets/svg/conversation.svg"
+          alt=""
+          class="bm-Img"
+        />
+        Contato
+      </button>
+    </div>
+  </div>
+</div>

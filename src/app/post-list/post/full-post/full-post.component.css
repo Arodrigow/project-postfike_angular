@@ -1,0 +1,39 @@
+.pstfk-fullPost {
+  height: inherit;
+  margin: 0 15px;
+}
+
+.pstfk-fullPostHeader {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  height: 35px;
+}
+
+.pstfk-fullPostFooter {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  height: 35px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.bm-Btn {
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.bm-Img {
+  display: inline;
+  width: 15px;
+  height: 18px;
+
+  margin-right: 5px;
+}
