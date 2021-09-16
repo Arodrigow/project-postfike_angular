@@ -12,16 +12,22 @@ import { MatDialog } from '@angular/material/dialog';
 export class PostComponent implements OnInit {
   @Input() postElement!: PostDto;
   bgColors = PostColors.getColors();
-  bgColor = this.bgColors[0];
+  @Input() bgColor = this.bgColors[0];
   deg = 'rotate(-1.3deg)';
+  @Input() isFull: boolean = false;
 
   constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    const rand = Math.floor(Math.random() * this.bgColors.length)
-    this.deg = `rotate(${(Math.random() * 3) - 1.5}deg)`;
+    if (!this.isFull) {
+      const rand = Math.floor(Math.random() * this.bgColors.length)
+      this.deg = `rotate(${(Math.random() * 3) - 1.5}deg)`;
 
-    this.bgColor = this.bgColors[rand];
+      this.bgColor = this.bgColors[rand];
+    }
+    if (this.isFull) {
+      this.deg = 'rotate(0deg)'
+    }
   }
 
   getDeadline() {
@@ -30,12 +36,8 @@ export class PostComponent implements OnInit {
 
   openModal() {
     const dialogRef = this.dialog.open(FullPostComponent, {
-      data: { post: this.postElement },
+      data: { post: this.postElement, color: this.bgColor },
       panelClass: 'custom-modalbox'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 }

@@ -9,21 +9,23 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dial
 })
 
 export class FullPostComponent implements OnInit {
-
   fullPostData: PostDto;
+  bgColor: string;
 
   constructor(
     public dialogRef: MatDialogRef<FullPostComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.fullPostData = data.post
+    this.bgColor = data.color
   }
 
   ngOnInit(): void {
     this.fullPostData = this.data.post;
+    this.bgColor = this.data.color
   }
 
-  onNoClick() {
+  onCloseClick() {
     this.dialogRef.close();
   }
 }
