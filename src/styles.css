@@ -187,3 +187,7 @@ input:focus {
   width: inherit;
   height: inherit;
 }
+
+.backdropBackground {
+  backdrop-filter: blur(5px) brightness(0.6);
+}

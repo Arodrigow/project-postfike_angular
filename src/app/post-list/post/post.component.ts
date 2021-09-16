@@ -37,7 +37,8 @@ export class PostComponent implements OnInit {
   openModal() {
     const dialogRef = this.dialog.open(FullPostComponent, {
       data: { post: this.postElement, color: this.bgColor },
-      panelClass: 'custom-modalbox'
+      panelClass: 'custom-modalbox',
+      backdropClass: 'backdropBackground'
     });
   }
 }
