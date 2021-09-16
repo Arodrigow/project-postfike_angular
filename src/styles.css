@@ -146,6 +146,13 @@ a {
   background-color: #ffd6d6;
 }
 
+.pstfk-btn-clear {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
 input {
   border-style: solid;
   border-color: white;
