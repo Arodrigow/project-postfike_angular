@@ -30,7 +30,8 @@ export class PostComponent implements OnInit {
 
   openModal() {
     const dialogRef = this.dialog.open(FullPostComponent, {
-      data: { post: this.postElement }
+      data: { post: this.postElement },
+      panelClass: 'custom-modalbox'
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -171,3 +171,19 @@ input {
 input:focus {
   outline-width: 0;
 }
+
+.custom-modalbox .mat-dialog-container {
+  box-sizing: border-box;
+  height: 551px;
+  width: 720px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+
+  background-color: rgb(245, 245, 245);
+}
+
+.bm-Img {
+  width: inherit;
+  height: inherit;
+}
