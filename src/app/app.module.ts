@@ -4,7 +4,8 @@ import { PostService } from './../services/post.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FullPostComponent } from './post-list/post/full-post/full-post.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoginComponent,
     FooterComponent,
     PageNotFoundComponent,
+    FullPostComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReactiveFormsModule,
     NoopAnimationsModule,
     HttpClientModule,
+    MatDialogModule,
     NgxPaginationModule,
     MatButtonModule,
     MatGridListModule,
