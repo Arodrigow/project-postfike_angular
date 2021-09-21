@@ -35,6 +35,35 @@
   flex-direction: row;
 }
 
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  height: 100%;
+  width: 100%;
+
+  outline: 1px solid red;
+}
+
+.pstfk-btn-outline {
+  text-align: center;
+
+  height: 15%;
+
+  margin: 2% 0;
+
+  background-color: transparent;
+  border: 2px solid #e8666d;
+  color: #e8666d;
+}
+
+.gallery-main-img {
+  height: 100%;
+  width: 100%;
+}
+
 .bm-Btn {
   font-size: 18px;
   display: flex;

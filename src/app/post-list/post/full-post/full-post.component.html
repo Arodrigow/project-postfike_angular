@@ -6,7 +6,23 @@
     <button class="pstfk-btn-clear" (click)="onCloseClick()">Fechar X</button>
   </div>
   <mat-grid-list cols="12" rowHeight="240">
-    <mat-grid-tile colspan="5" rowspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="5" rowspan="1">
+      <div class="gallery-container">
+        <button
+          class="pstfk-btn-clear"
+          style="height: 80%; width: 90%; align-self: center"
+        >
+          <img
+            src="../../../../assets/imgs/post-it-example.jpg"
+            alt=""
+            class="gallery-main-img"
+          />
+        </button>
+        <button mat-raised-button class="pstfk-btn-outline">
+          Abrir galeria de fotos
+        </button>
+      </div>
+    </mat-grid-tile>
     <mat-grid-tile colspan="7" rowspan="1"
       ><app-post
         [postElement]="fullPostData"
