@@ -27,11 +27,11 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const validCredentials: CredentialsDto = this.loginForm.value
-    let foi;
+    let validated;
     if (validCredentials.email && validCredentials.password) {
-      foi = this.authService.login(validCredentials)
+      validated = this.authService.login(validCredentials)
     }
-    if (foi) {
+    if (validated) {
       this.router.navigate(['/'])
     }
 
