@@ -14,6 +14,7 @@ export class PostListComponent implements OnInit {
   posts: PostDto[] = []
   postCount: number = 0;
   pageNumber: number = 1;
+  query: string = '';
 
   constructor(private postService: PostService,
     private location: Location,
@@ -21,7 +22,10 @@ export class PostListComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(params => this.pageNumber = params.page);
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.pageNumber = params.page || 1;
+      this.query = params.q || ''
+    });
     this.getAllPosts()
 
     this.breakpoint = (window.visualViewport.width <= 400) ? 1 : 3;
@@ -32,7 +36,7 @@ export class PostListComponent implements OnInit {
   }
 
   getAllPosts() {
-    this.postService.getAllPosts(this.pageNumber).subscribe(
+    this.postService.getAllPosts(this.pageNumber, this.query).subscribe(
       response => {
         if (response.page.length == 0) {
           this.router.navigateByUrl('/Page-Not-Found')
@@ -46,7 +50,7 @@ export class PostListComponent implements OnInit {
   handlePageChange(event: any) {
     this.pageNumber = event;
     this.getAllPosts();
-    this.location.go(`/posts?page=${this.pageNumber}`)
+    this.location.go(`/posts/search?page=${this.pageNumber}&q=${this.query}`)
   }
 
 

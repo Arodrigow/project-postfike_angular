@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: AuthService) {}
+  searchForm = this.formBuilder.group({
+    q: ['']
+  })
+
+  constructor(private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    const { q } = this.searchForm.value;
+    this.router.navigate([`/posts/search`], { queryParams: { page: 1, q } }).then(() => {
+      window.location.reload();
+    });;
   }
 
   isLoggedIn() {

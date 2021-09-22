@@ -2,9 +2,15 @@
   <a href="#">
     <img src="../../assets/imgs/Logo.png" alt="Postfike" class="logo" />
   </a>
-  <form>
-    <input type="text" id="q" name="q" placeholder="Buscar" />
-    <button mat-raised-button class="pstfk-btn">Buscar</button>
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      id="q"
+      name="q"
+      placeholder="Buscar"
+      formControlName="q"
+    />
+    <button mat-raised-button class="pstfk-btn" type="submit">Buscar</button>
   </form>
 
   <div>

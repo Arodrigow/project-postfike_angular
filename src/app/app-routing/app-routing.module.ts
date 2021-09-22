@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'posts', component: PostListComponent },
+  { path: 'posts', component: PostListComponent, children: [{ path: 'search', component: PostListComponent }] },
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
