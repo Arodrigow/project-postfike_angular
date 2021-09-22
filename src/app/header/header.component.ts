@@ -10,6 +10,8 @@ import { FormBuilder } from '@angular/forms';
 })
 export class HeaderComponent implements OnInit {
 
+  isOnlyLogo: boolean = false;
+
   searchForm = this.formBuilder.group({
     q: ['']
   })
@@ -20,6 +22,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.routeTypeTest();
   }
 
   onSubmit() {
@@ -27,6 +30,19 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([`/posts/search`], { queryParams: { page: 1, q } }).then(() => {
       window.location.reload();
     });;
+  }
+  ngAfterContentChecked() {
+    this.routeTypeTest()
+  }
+
+  routeTypeTest() {
+    const currentUrl = this.router.url;
+    if (currentUrl == '/login') {
+      this.isOnlyLogo = true;
+    }
+    else {
+      this.isOnlyLogo = false;
+    }
   }
 
   isLoggedIn() {

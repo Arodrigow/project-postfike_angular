@@ -1,8 +1,8 @@
-<nav class="nav-flex">
+<nav [ngClass]="!isOnlyLogo ? 'nav-flex' : 'nav-flex-center'">
   <a href="#">
     <img src="../../assets/imgs/Logo.png" alt="Postfike" class="logo" />
   </a>
-  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" *ngIf="!isOnlyLogo">
     <input
       type="text"
       id="q"
@@ -18,7 +18,7 @@
       mat-raised-button
       class="pstfk-btn"
       routerLink="/login"
-      *ngIf="isLoggedOut()"
+      *ngIf="isLoggedOut() && !isOnlyLogo"
     >
       Entrar
     </button>

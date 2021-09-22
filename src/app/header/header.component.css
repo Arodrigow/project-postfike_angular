@@ -5,6 +5,13 @@
   align-items: center;
   padding-bottom: 20px;
 }
+.nav-flex-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
 
 .logo {
   height: 64px;
